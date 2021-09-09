@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage ('Dependencies') {
             steps {
-                sh 'npm install'
                 sh 'sudo apt update'
+                sh 'sudo apt install nodejs'
                 sh 'sudo apt install redis-server'
                 sh 'sed -i "s/no/systemd/g" /etc/redis/redis.conf'
                 sh 'sed -i "s/no/systemd/g" /etc/redis/redis.conf'
@@ -13,7 +13,8 @@ pipeline {
         }
         stage ('Build') {
             steps {
-                echo 'node index.js'
+                sh 'npm install'
+                sh 'node index.js'
             }
         }
         stage ('Deploy') {
