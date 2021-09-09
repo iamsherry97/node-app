@@ -15,11 +15,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'npm install'
-                timeout (time: 300 ,unit: 'SECONDS') {
-                    sh 'docker-compose up --build'
-                }
-                
-
+                sh 'docker-compose up --build'
             }
         }
         stage ('Deploy') {
