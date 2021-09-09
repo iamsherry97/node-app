@@ -7,8 +7,8 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.236.96.234 uptime'
                     echo 'maually done dependicies'
                     sh 'whoami'
-                    sh 'cp -r /var/lib/jenkins/workspace/Node-pipeline/ /home/ubuntu/'
-                    sh 'scp -r /home/ubuntu/Node-pipeline/ ubuntu@18.236.96.234:/home/ubuntu/'
+                    sh 'sleep 3'
+                    sh 'scp -r /var/lib/jenkins/workspace/Node-pipeline/ ubuntu@18.236.96.234:/home/ubuntu/'
                 }
             }
         }
