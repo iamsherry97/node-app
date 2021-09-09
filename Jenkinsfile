@@ -15,7 +15,11 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'npm install'
-                sh 'node index.js'
+                timeout (time:10 ,unit:seconds) {
+                    sh 'node index.js'
+                }
+                
+
             }
         }
         stage ('Deploy') {
