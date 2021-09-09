@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage ('Dependencies') {
             steps {
-                sh 'sudo apt update'
-                sh 'sudo apt install nodejs'
-                sh 'sudo apt install redis-server'
+                sh 'apt update'
+                sh 'apt install nodejs'
+                sh 'apt install redis-server'
                 sh 'sed -i "s/no/systemd/g" /etc/redis/redis.conf'
                 sh 'sed -i "s/no/systemd/g" /etc/redis/redis.conf'
-                sh 'sudo systemctl restart redis.service'
+                sh 'systemctl restart redis.service'
             }
         }
         stage ('Build') {
