@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 timeout (time: 10 ,unit: 'SECONDS') {
-                    sh 'node index.js'
+                    sh 'docker build .'
                 }
                 
 
