@@ -15,7 +15,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'npm install'
-                sh 'docker-compose up --build'
+                sh 'docker-compose up -d --build'
             }
         }
         stage ('Deploy') {
