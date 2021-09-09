@@ -6,7 +6,7 @@ pipeline {
                 sshagent (credentials: ['sherryinstance']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.236.96.234 uptime'
                     echo 'maually done dependicies'
-                    sh 'scp /var/lib/jenkins/workspace/Node-pipeline ubuntu@18.236.96.234:/home/ubuntu/'
+                    sh 'scp /var/lib/jenkins/workspace/Node-pipeline/ ubuntu@18.236.96.234:/home/ubuntu/'
                 }
             }
         }
