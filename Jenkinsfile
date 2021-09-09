@@ -15,7 +15,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'npm install'
-                timeout (time: 10 ,unit: 'SECONDS') {
+                timeout (time: 300 ,unit: 'SECONDS') {
                     sh 'docker build .'
                 }
                 
