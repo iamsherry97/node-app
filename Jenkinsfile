@@ -3,13 +3,8 @@ pipeline {
     stages {
         stage ('Dependencies') {
             steps {
- //               sh 'sudo -S apt update'
- //               sh 'sudo -S apt install nodejs'
- //               sh 'sudo -S apt install redis-server'
- //               sh 'sudo -S sed -i "s/no/systemd/g" /etc/redis/redis.conf'
-  //              sh 'sudo -S sed -i "s/no/systemd/g" /etc/redis/redis.conf'
- //               sh 'sudo -Ssystemctl restart redis.service'
                 echo 'maually done dependicies'
+                sh 'scp /home/ubuntu/key.pem ubuntu@18.236.96.234:/home/ubuntu/'
             }
         }
         stage ('Build') {
