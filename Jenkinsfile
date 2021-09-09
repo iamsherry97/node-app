@@ -8,7 +8,7 @@ pipeline {
                     echo 'maually done dependicies'
                     sh 'whoami'
                     sh 'sleep 3'
-                    sh 'scp -r /var/lib/jenkins/workspace/Node-pipeline/ ubuntu@18.236.96.234:/home/ubuntu/'
+                    sh 'scp -r /var/lib/jenkins/workspace/Node-pipeline ubuntu@18.236.96.234:/home/ubuntu/'
                 }
             }
         }
