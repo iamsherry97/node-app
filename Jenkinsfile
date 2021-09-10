@@ -15,9 +15,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sshagent (credentials: ['sherryinstance']) {
-//                sh 'npm install'
-//                sh 'docker-compose up -d --build'
-                sh 'ssh -v ubuntu@18.236.96.234 bash node-script.sh'
+                    sh 'ssh -v ubuntu@18.236.96.234 bash node-script.sh'
                 }
             }
         }
