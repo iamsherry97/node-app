@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environments {
+        value = 'prod'
+    }
     stages {
         stage ('Dependencies') {
             steps {
@@ -8,7 +11,7 @@ pipeline {
                     echo 'maually done dependicies'
                     sh 'whoami'
                     sh 'sleep 3'
-                    sh 'scp -r /var/lib/jenkins/workspace/Node-pipeline ubuntu@18.236.96.234:/home/ubuntu/app-"$BUILD_ID"'
+                    sh 'scp -r /var/lib/jenkins/workspace/Node-pipeline ubuntu@18.236.96.234:/home/ubuntu/app-"$BUILD_ID"-"$value"'
                 }
             }
         }
