@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environments {
+    environment {
         value = 'prod'
     }
     stages {
